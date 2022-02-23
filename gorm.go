@@ -51,7 +51,9 @@ func loadGrom(configs []*mysqlConfig) {
 
 	}
 
-	gmysql.DB.Use(register)
+	if register != nil {
+		gmysql.DB.Use(register)
+	}
 	sqlDB, _ := gmysql.DB.DB()
 	sqlDB.SetMaxOpenConns(configs[0].MaxOpenConns)
 	sqlDB.SetMaxIdleConns(configs[0].MaxIdleConns)
