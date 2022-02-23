@@ -1,0 +1,16 @@
+# server默认为http
+[server]
+port = 8080
+
+[[mysql]]
+database = "iot"
+ip = "localhost"
+port = 3306
+user = "root"
+password = "123"
+
+[redis]
+addr = "localhost:6379"
+password = "123"
+db = 0
+pool_size = 10
